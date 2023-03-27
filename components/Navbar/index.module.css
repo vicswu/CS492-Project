@@ -1,0 +1,30 @@
+.navbar {
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  font-size: 0.85rem;
+  max-width: 100%;
+  padding: 2rem;
+  width: 100%;
+  z-index: 10;
+  font-family: var(--font-mono);
+  color: #e7ebc5;
+  position: fixed;
+  transition: 0.3s ease-in;
+}
+
+.navbar-scrolled {
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  font-size: 0.85rem;
+  max-width: 100%;
+  padding: 2rem;
+  width: 100%;
+  z-index: 10;
+  font-family: var(--font-mono);
+  color: #7871aa;
+  background-color: #e7ebc5;
+  position: fixed;
+  transition: 0.3s ease-in;
+}
