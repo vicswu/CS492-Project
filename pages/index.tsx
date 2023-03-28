@@ -8,6 +8,8 @@ import styles from "@/styles/Home.module.css";
 // Components
 import Navbar from "../components/Navbar";
 import About from "../components/About";
+import Insights from "../components/Insights"
+import Biases from "../components/Biases";
 
 export default function Home() {
   const [menu, setMenu] = useState(false);
@@ -27,8 +29,8 @@ export default function Home() {
         <Navbar menu={menu} setMenu={setMenu} />
         <div className={styles.body} style={{ transition: "all 0.3s ease-in", opacity: menu ? 0.5 : 1 }}>
           <About/>
-          <section id="insights" className={styles.insights}>Insights</section>
-          <section id="biases" className={styles.biases}>Biases</section>
+          <Insights/>
+          <Biases/>
         </div>
       </main>
     </>

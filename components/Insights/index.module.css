@@ -1,0 +1,49 @@
+.insights {
+  display: inline-block;
+  width: 100vw;
+  font-family: var(--font-mono);
+  padding: 7rem 2rem 7rem 2rem;
+  color: #e7ebc5;
+}
+
+.insights-title {
+  text-transform: uppercase;
+}
+
+.insights-content {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.insights-left {
+  position: relative;
+  width: 50vw;
+  height: 50vh;
+}
+
+.insights-right {
+  position: relative;
+  width: 50vw;
+  height: 50vh;
+}
+
+.insights-chart-container {
+  width: 100%;
+  height: 100%;
+  text-align: -webkit-center;
+}
+
+.insights-chart-title {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.insights-chart {
+  width: 85%;
+  height: 85%;
+}
+
+.insights-chart-description {
+  text-align: center;
+}
