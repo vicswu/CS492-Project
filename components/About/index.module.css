@@ -1,0 +1,23 @@
+.about {
+  display: flex;
+  justify-content: inherit;
+  align-items: inherit;
+  max-width: var(--max-width);
+  width: 50vw;
+  z-index: 2;
+  font-family: var(--font-mono);
+  height: 100vh;
+  padding: 7rem 2rem;
+  color: #e7ebc5;
+  align-items: center;
+}
+
+.about-title {
+  text-transform: uppercase;
+}
+
+.about-right {
+  width: 50vw;
+  height: 50vh;
+}
+

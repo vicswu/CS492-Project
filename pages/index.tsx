@@ -1,14 +1,17 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "next/font/google";
+import { useState } from "react";
 
 // Styles
 import styles from "@/styles/Home.module.css";
 
 // Components
 import Navbar from "../components/Navbar";
+import About from "../components/About";
 
 export default function Home() {
+  const [menu, setMenu] = useState(false);
+
   return (
     <>
       <Head>
@@ -21,23 +24,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <Navbar />
-        <div className={styles.description}>{/* TODO About Section */}</div>
-
-        <div className={styles.center}>
-          {/* TODO Center Image */}
-          {/* <Image
-            className={styles.logo}
-            src="/ai.jpeg"
-            alt="AI Image"
-            width={180}
-            height={180}
-            priority
-          /> */}
-        </div>
-
-        <div className={styles.grid}>
-          {/* TODO Info Section (Race, Gender, Religion) */}
+        <Navbar menu={menu} setMenu={setMenu} />
+        <div className={styles.body} style={{ transition: "all 0.3s ease-in", opacity: menu ? 0.5 : 1 }}>
+          <About/>
+          <section id="insights" className={styles.insights}>Insights</section>
+          <section id="biases" className={styles.biases}>Biases</section>
         </div>
       </main>
     </>
