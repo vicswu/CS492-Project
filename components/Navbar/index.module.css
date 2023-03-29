@@ -32,6 +32,7 @@
   z-index: 1000;
   font-family: var(--font-mono);
   color: #7871aa;
+  transition: background-color 0.3s ease-in;
 }
 
 .menu-container-scrolled {

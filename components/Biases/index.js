@@ -9,7 +9,7 @@ import styles from "./index.module.css";
 
 export default function Biases({}) {
   return (
-    <section id="insights" className={styles.biases}>
+    <section id="biases" className={styles.biases}>
       <h1 className={styles["biases-title"]}>Biases</h1>
       <div className={styles["biases-content"]}>
         <div className={styles["biases-left"]}>

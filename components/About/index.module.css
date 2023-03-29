@@ -1,18 +1,20 @@
 .about {
-  display: flex;
   justify-content: inherit;
-  align-items: inherit;
   width: 100vw;
-  z-index: 2;
   font-family: var(--font-mono);
   height: 100vh;
-  padding: 7rem 0rem 7rem 2rem;
+  padding: 9rem 0rem 5rem 2rem;
   color: #e7ebc5;
   align-items: center;
 }
 
 .about-title {
   text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.about-content {
+  display: flex;
 }
 
 .about-left {
@@ -21,13 +23,23 @@
   height: 50vh;
 }
 
+.about-text {
+  margin-bottom: 1rem;
+  line-height: 1.25;
+  padding-right: 1.5rem;
+}
+
 .about-right {
   position: relative;
   width: 50vw;
-  height: 50vh;
+  height: 67.5vh;
 }
 
 .about-image {
   border-radius: 25px 0px 0px 25px;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
-

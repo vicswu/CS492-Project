@@ -8,7 +8,7 @@ import styles from "@/styles/Home.module.css";
 // Components
 import Navbar from "../components/Navbar";
 import About from "../components/About";
-import Insights from "../components/Insights"
+import Insights from "../components/Insights";
 import Biases from "../components/Biases";
 
 export default function Home() {
@@ -27,11 +27,17 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <Navbar menu={menu} setMenu={setMenu} />
-        <div className={styles.body} style={{ transition: "all 0.3s ease-in", opacity: menu ? 0.5 : 1 }}>
-          <About/>
-          <Insights/>
-          <Biases/>
+        <div
+          className={styles.body}
+          style={{ transition: "all 0.3s ease-in", opacity: menu ? 0.5 : 1 }}
+        >
+          <About />
+          <Insights />
+          <Biases />
         </div>
+        <footer className={styles["copyright-container"]}>
+          <small className={styles["copyright-text"]}>&copy; Copyright 2023 Victor Wu, Shaishav Patel, Alexander Kung, Jaswin Hargun</small>{" "}
+        </footer>
       </main>
     </>
   );

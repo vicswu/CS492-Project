@@ -7,7 +7,7 @@ import styles from "./index.module.css";
 
 // Components
 import Image from "next/image";
-import { LoremIpsum } from "react-lorem-ipsum";
+import { aboutText } from "../../lib/textContent";
 
 export default function About({}) {
   // Temp solution for Lorem Ipsum generator
@@ -22,20 +22,22 @@ export default function About({}) {
 
   return (
     <section id="about" className={styles.about}>
-      <div className={styles["about-left"]}>
-        <h1 className={styles["about-title"]}>About</h1>
-        <div className={styles["about-content"]}>
-          <LoremIpsum p={1} />
+      <h1 className={styles["about-title"]}>About</h1>
+      <div className={styles["about-content"]}>
+        <div className={styles["about-left"]}>
+          {aboutText.map((text) => (
+            <p className={styles["about-text"]}>{text}</p>
+          ))}
         </div>
-      </div>
-      <div className={styles["about-right"]}>
-        <Image
-          className={styles["about-image"]}
-          src={"/ai.jpg"}
-          alt="AI Image"
-          fill
-          priority
-        />
+        <div className={styles["about-right"]}>
+          <Image
+            className={styles["about-image"]}
+            src={"/ai.jpg"}
+            alt="AI Image"
+            fill
+            priority
+          />
+        </div>
       </div>
     </section>
   );
