@@ -1,33 +1,23 @@
-.biases {
+.activity {
   width: 100vw;
   font-family: var(--font-mono);
-  padding: 9rem 2rem 0rem 2rem;
+  padding: 0rem 2rem 7rem 2rem;
   color: #e7ebc5;
   margin-top: 15rem;
 }
 
-.biases-title {
+.activity-title {
   text-transform: uppercase;
 }
 
-.biases-content {
+.activity-content {
+  display: flex;
   width: 95vw;
   height: 75vh;
   border-radius: 25px;
   background-color: #e7ebc5;
   margin-top: 3rem;
-}
-
-.biases-radio-group {
-  padding: 2rem 3rem;
-}
-
-.biases-radio-group-title {
-  margin-bottom: 1rem;
+  padding: 3rem;
   color: #7871aa;
 }
 
-.biases-chart {
-  width: 100%;
-  height: 75%;
-}

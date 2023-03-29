@@ -123,6 +123,20 @@ export default function Navbar({ menu, setMenu }) {
                 </div>
               </a>
             </ul>
+            <ul>
+              <a
+                href="#activity"
+                className={concatClassName(
+                  styles["menu-section"],
+                  scrolled && styles["menu-section-scrolled"]
+                )}
+              >
+                <div className={styles["menu-section-details"]}>
+                  <div className={styles["menu-section-number"]}>4.0</div>
+                  <div className={styles["menu-section-name"]}>Activity</div>
+                </div>
+              </a>
+            </ul>
           </div>
         </div>
       </Slide>

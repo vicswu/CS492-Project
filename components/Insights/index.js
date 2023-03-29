@@ -25,7 +25,7 @@ export default function Insights({}) {
             </div>
           </div>
           <div className={styles["insights-chart-container"]}>
-            <h3 className={styles["insights-chart-title"]}>Sex</h3>
+            <h3 className={styles["insights-chart-title"]}>Education</h3>
             <div className={styles["insights-chart"]}>
               <CustomPieChart />
             </div>
@@ -34,7 +34,7 @@ export default function Insights({}) {
             </div>
           </div>
           <div className={styles["insights-chart-container"]}>
-            <h3 className={styles["insights-chart-title"]}>Sex</h3>
+            <h3 className={styles["insights-chart-title"]}>Employment Status</h3>
             <div className={styles["insights-chart"]}>
               <CustomPieChart />
             </div>
@@ -54,7 +54,7 @@ export default function Insights({}) {
             </div>
           </div>
           <div className={styles["insights-chart-container"]}>
-            <h3 className={styles["insights-chart-title"]}>Race</h3>
+            <h3 className={styles["insights-chart-title"]}>Worker Class</h3>
             <div className={styles["insights-chart"]}>
               <CustomBarChart />
             </div>
@@ -63,7 +63,7 @@ export default function Insights({}) {
             </div>
           </div>
           <div className={styles["insights-chart-container"]}>
-            <h3 className={styles["insights-chart-title"]}>Race</h3>
+            <h3 className={styles["insights-chart-title"]}>Marital Status</h3>
             <div className={styles["insights-chart"]}>
               <CustomBarChart />
             </div>

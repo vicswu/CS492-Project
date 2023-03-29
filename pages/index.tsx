@@ -10,6 +10,7 @@ import Navbar from "../components/Navbar";
 import About from "../components/About";
 import Insights from "../components/Insights";
 import Biases from "../components/Biases";
+import Activity from "../components/Activity";
 
 export default function Home() {
   const [menu, setMenu] = useState(false);
@@ -34,6 +35,7 @@ export default function Home() {
           <About />
           <Insights />
           <Biases />
+          <Activity />
         </div>
         <footer className={styles["copyright-container"]}>
           <small className={styles["copyright-text"]}>&copy; Copyright 2023 Victor Wu, Shaishav Patel, Alexander Kung, Jaswin Hargun</small>{" "}
