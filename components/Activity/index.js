@@ -12,9 +12,10 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
-import Switch from '@mui/material/Switch';
-import FormGroup from '@mui/material/FormGroup';
+import Switch from "@mui/material/Switch";
+import FormGroup from "@mui/material/FormGroup";
 import Divider from "@mui/material/Divider";
+import CountUp from "react-countup";
 
 export default function Activity({}) {
   const [race, setRace] = useState("");
@@ -27,7 +28,7 @@ export default function Activity({}) {
     <section id="activity" className={styles.activity}>
       <h1 className={styles["activity-title"]}>Activity</h1>
       <div className={styles["activity-content"]}>
-        <div>
+        <div className={styles["activity-left"]}>
           <div className={styles["biases-radio-group"]}>
             <div className={styles["biases-radio-group-title"]}>Sex</div>
             <FormControl>
@@ -100,7 +101,35 @@ export default function Activity({}) {
           </div>
         </div>
         <Divider orientation="vertical" flexItem />
-        <div>Right</div>
+        <div className={styles["activity-right"]}>
+          <div className={styles["activity-result"]}>
+            <div>Model 1 has an accuracy of: </div>
+            <CountUp
+              className={styles["activity-count"]}
+              end={10000}
+              duration={2.5}
+              useEasing={true}
+            />
+          </div>
+          <div className={styles["activity-result"]}>
+            <div>Model 2 has an accuracy of: </div>
+            <CountUp
+              className={styles["activity-count"]}
+              end={10000}
+              duration={2.5}
+              useEasing={true}
+            />
+          </div>
+          <div className={styles["activity-result"]}>
+            <div>Model 3 has an accuracy of: </div>
+            <CountUp
+              className={styles["activity-count"]}
+              end={10000}
+              duration={2.5}
+              useEasing={true}
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

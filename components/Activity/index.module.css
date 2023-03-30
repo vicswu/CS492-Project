@@ -21,3 +21,18 @@
   color: #7871aa;
 }
 
+.activity-left {
+  width: 70%;
+}
+
+.activity-right {
+  width: 30%;
+  text-align: center;
+  display: grid;
+  padding-left: 2rem;
+}
+
+.activity-count {
+  font-size: large;
+  font-weight: 500;
+}
