@@ -14,6 +14,7 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import Switch from "@mui/material/Switch";
 import FormGroup from "@mui/material/FormGroup";
+import TextField from '@mui/material/TextField';
 import Divider from "@mui/material/Divider";
 import CountUp from "react-countup";
 
@@ -36,13 +37,13 @@ export default function Activity({}) {
                 row
                 aria-labelledby="demo-row-radio-buttons-group-label"
                 name="row-radio-buttons-group"
-                defaultChecked="male"
+                defaultChecked="isMale"
               >
                 <FormControlLabel
                   sx={{
                     color: "#7871aa",
                   }}
-                  value="male"
+                  value="isMale"
                   control={
                     <Radio
                       sx={{
@@ -59,7 +60,7 @@ export default function Activity({}) {
                   sx={{
                     color: "#7871aa",
                   }}
-                  value="female"
+                  value="isFemale"
                   control={
                     <Radio
                       sx={{
@@ -83,50 +84,130 @@ export default function Activity({}) {
                 label="Race"
                 onChange={handleChange}
               >
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+                <MenuItem value="isAmericanIndian">American Indian</MenuItem>
+                <MenuItem value="isAsian">Asian</MenuItem>
+                <MenuItem value="isBlack">Black</MenuItem>
+                <MenuItem value="isPacificIslander">Pacific Islander</MenuItem>
+                <MenuItem value="isWhite">White</MenuItem>
+                <MenuItem value="isOtherRace">Other</MenuItem>
               </Select>
             </FormControl>
-            <FormControl component="fieldset">
-              <FormGroup aria-label="position" row>
+            <div className={styles["biases-radio-group-title"]}>Marital Status</div>
+            <FormControl>
+              <RadioGroup
+                row
+                aria-labelledby="demo-row-radio-buttons-group-label"
+                name="row-radio-buttons-group"
+                defaultChecked="male"
+              >
                 <FormControlLabel
-                  value="married"
-                  control={<Switch color="primary" />}
+                  sx={{
+                    color: "#7871aa",
+                  }}
+                  value="isMarried"
+                  control={
+                    <Radio
+                      sx={{
+                        color: "#7871aa",
+                        "&.Mui-checked": {
+                          color: "#7871aa",
+                        },
+                      }}
+                    />
+                  }
                   label="Married"
-                  labelPlacement="start"
                 />
-              </FormGroup>
+                <FormControlLabel
+                  sx={{
+                    color: "#7871aa",
+                  }}
+                  value="wasMarried"
+                  control={
+                    <Radio
+                      sx={{
+                        color: "#7871aa",
+                        "&.Mui-checked": {
+                          color: "#7871aa",
+                        },
+                      }}
+                    />
+                  }
+                  label="Divorced"
+                />
+                <FormControlLabel
+                  sx={{
+                    color: "#7871aa",
+                  }}
+                  value="neverMarried"
+                  control={
+                    <Radio
+                      sx={{
+                        color: "#7871aa",
+                        "&.Mui-checked": {
+                          color: "#7871aa",
+                        },
+                      }}
+                    />
+                  }
+                  label="Single"
+                />
+              </RadioGroup>
+            </FormControl>
+            <TextField sx={{marginTop: "3rem"}} id="standard-basic" label="Age" variant="standard" type="number"/>
+            <div className={styles["biases-radio-group-title"]}>Education</div>
+            <FormControl fullWidth>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={race}
+                label="Education"
+                onChange={handleChange}
+              >
+                <MenuItem value="noSchooling">No Schooling</MenuItem>
+                <MenuItem value="maxGrade4">Up to Grade 4</MenuItem>
+                <MenuItem value="maxGrade8">Up to Grade 8</MenuItem>
+                <MenuItem value="maxSomeHS">Highschool (No Diploma)</MenuItem>
+                <MenuItem value="highSchoolDiploma">Highschool Diploma</MenuItem>
+                <MenuItem value="someCollege">College (No Diploma)</MenuItem>
+                <MenuItem value="associatesDegree">Associate's Degree</MenuItem>
+                <MenuItem value="bachelorsDegree">Bachelor's Degree</MenuItem>
+                <MenuItem value="bachelorsPlusProfessionalDegree">Bachelor's Degree + Professional Degree</MenuItem>
+                <MenuItem value="mastersDegree">Master's Degree</MenuItem>
+                <MenuItem value="doctoralDegree">Doctoral Degree</MenuItem>
+              </Select>
             </FormControl>
           </div>
         </div>
         <Divider orientation="vertical" flexItem />
         <div className={styles["activity-right"]}>
           <div className={styles["activity-result"]}>
-            <div>Model 1 has an accuracy of: </div>
+            <div>Model 1 predicts your income to be: </div>
             <CountUp
               className={styles["activity-count"]}
               end={10000}
               duration={2.5}
               useEasing={true}
+              suffix="USD$"
             />
           </div>
           <div className={styles["activity-result"]}>
-            <div>Model 2 has an accuracy of: </div>
+            <div>Model 2 predicts your income to be: </div>
             <CountUp
               className={styles["activity-count"]}
               end={10000}
               duration={2.5}
               useEasing={true}
+              suffix="USD$"
             />
           </div>
           <div className={styles["activity-result"]}>
-            <div>Model 3 has an accuracy of: </div>
+            <div>Model 3 predicts your income to be: </div>
             <CountUp
               className={styles["activity-count"]}
               end={10000}
               duration={2.5}
               useEasing={true}
+              suffix="USD$"
             />
           </div>
         </div>
