@@ -24,6 +24,7 @@
 .insights-radio-group-title {
   margin-bottom: 1rem;
   color: #7871aa;
+  font-weight: 600;
 }
 
 .insights-dataset-chart {
@@ -34,6 +35,7 @@
 
 .insights-dataset-chart-title {
   color: #7871aa;
+  font-weight: 600;
 }
 
 .insights-salary-chart {
@@ -47,10 +49,29 @@
   color: #7871aa;
   margin-top: 3rem;
   margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .insights-radial-chart {
   width: 100%;
   height: 400px;
   padding-left: 10rem;
+}
+
+.insights-observations {
+  width: 100%;
+  height: 200px;
+  padding-left: 3rem;
+  margin-top: 3rem;
+}
+
+.insights-observations-title {
+  margin-bottom: 1rem;
+  color: #7871aa;
+  font-weight: 600;
+}
+
+.insights-observations-content {
+  margin-bottom: 1rem;
+  color: #7871aa;
 }

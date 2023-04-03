@@ -173,6 +173,14 @@ export default function Insights({}) {
         <div className={styles["insights-radial-chart"]}>
           <CustomRadialBarChart data={radialData} />
         </div>
+        <div className={styles["insights-observations"]}>
+          <div className={styles["insights-observations-title"]}>
+            Observations
+          </div>
+          <div className={styles["insights-observations-content"]}>
+            Short Paragraph
+          </div>
+        </div>
       </div>
     </section>
   );

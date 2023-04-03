@@ -11,7 +11,6 @@
 
 .biases-content {
   width: 95vw;
-  height: 75vh;
   border-radius: 25px;
   background-color: #e7ebc5;
   margin-top: 3rem;
@@ -24,9 +23,71 @@
 .biases-radio-group-title {
   margin-bottom: 1rem;
   color: #7871aa;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
 }
 
-.biases-chart {
+.biases-popover {
+  margin-left: 0.5rem;
+}
+
+.biases-results {
   width: 100%;
-  height: 75%;
+  padding-left: 3rem;
+}
+
+.biases-result {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.biases-result-title {
+  color: #7871aa;
+  font-weight: 600;
+  margin-right: 3rem;
+  width: 250px;
+}
+
+.biases-result-value {
+  color: #7871aa;
+}
+
+.biases-observations {
+  width: 100%;
+  padding-left: 3rem;
+}
+
+.biases-observations-title {
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  color: #7871aa;
+  font-weight: 600;
+}
+
+.biases-observations-chart {
+  height: 400px;
+}
+
+.biases-observations-explanation {
+  color: #7871aa;
+}
+
+.biases-shap {
+  width: 100%;
+  padding-left: 3rem;
+}
+
+.biases-shap-title {
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  color: #7871aa;
+  font-weight: 600;
+}
+
+.biases-shap-image {
+  height: 800px;
+  width: 50%;
+  position: relative;
+  align-items: center;
 }
