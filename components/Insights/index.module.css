@@ -12,7 +12,6 @@
 
 .insights-content {
   width: 95vw;
-  height: 145vh;
   border-radius: 25px;
   background-color: #e7ebc5;
   margin-top: 3rem;
@@ -29,7 +28,7 @@
 
 .insights-dataset-chart {
   width: 100%;
-  height: 35%;
+  height: 400px;
   padding-left: 3rem;
 }
 
@@ -39,12 +38,19 @@
 
 .insights-salary-chart {
   width: 100%;
-  height: 35%;
+  height: 400px;
   padding-left: 3rem;
+  margin-bottom: 5rem;
 }
 
 .insights-salary-chart-title {
   color: #7871aa;
   margin-top: 3rem;
   margin-bottom: 1rem;
+}
+
+.insights-radial-chart {
+  width: 100%;
+  height: 400px;
+  padding-left: 10rem;
 }

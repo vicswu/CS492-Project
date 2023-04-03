@@ -15,7 +15,7 @@ export default function CustomBarChart({ data, keys }) {
         },
       }}
       indexBy="type"
-      margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+      margin={{ top: 50, right: 220, bottom: 50, left: 80 }}
       padding={0.3}
       valueScale={{ type: "linear" }}
       indexScale={{ type: "band", round: true }}
@@ -40,14 +40,11 @@ export default function CustomBarChart({ data, keys }) {
         tickRotation: 0,
         legend: "Count",
         legendPosition: "middle",
-        legendOffset: -40,
+        legendOffset: -70,
       }}
       labelSkipWidth={12}
       labelSkipHeight={12}
-      labelTextColor={{
-        from: "color",
-        modifiers: [["darker", 1.6]],
-      }}
+      labelTextColor="black"
       legends={[
         {
           dataFrom: "keys",
@@ -73,10 +70,7 @@ export default function CustomBarChart({ data, keys }) {
         },
       ]}
       role="application"
-      ariaLabel="Nivo bar chart demo"
-      barAriaLabel={function (e) {
-        return e.id + ": " + e.formattedValue + " in country: " + e.indexValue;
-      }}
+      ariaLabel="Insights Bar Chart"
     />
   );
 }

@@ -32,7 +32,15 @@ export default function Methodology({}) {
               target="_blank"
               rel="noopener"
             >
-              <GitHubIcon sx={{ "&:hover": { color: "#333", transition: "color 0.2s ease-in" } }} fontSize="large" />
+              <GitHubIcon
+                sx={{
+                  "&:hover": {
+                    color: "#333",
+                    transition: "color 0.2s ease-in",
+                  },
+                }}
+                fontSize="large"
+              />
             </Link>
           </div>
           <div className={styles["methodology-github-container"]}>
@@ -46,7 +54,15 @@ export default function Methodology({}) {
               target="_blank"
               rel="noopener"
             >
-              <GitHubIcon sx={{ "&:hover": { color: "#333", transition: "color 0.2s ease-in" } }} fontSize="large" />
+              <GitHubIcon
+                sx={{
+                  "&:hover": {
+                    color: "#333",
+                    transition: "color 0.2s ease-in",
+                  },
+                }}
+                fontSize="large"
+              />
             </Link>
           </div>
         </div>

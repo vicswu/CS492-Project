@@ -8,11 +8,11 @@ import styles from "./index.module.css";
 // Components
 import CustomPieChart from "./CustomPieChart";
 import CustomBarChart from "./CustomBarChart";
+import CustomRadialBarChart from "./CustomRadialBarChart";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import { data, keys } from "../../lib/insightsData";
@@ -21,9 +21,10 @@ export default function Insights({}) {
   const [dataFieldOption, setDataFieldOption] = useState("sex");
   const [salaryOption, setSalaryOption] = useState("under25k");
 
-  const [barChartKeys, setBarChartKeys] = useState(["male, female"]);
+  const [barChartKeys, setBarChartKeys] = useState([]);
   const [datasetData, setDatasetData] = useState([]);
   const [salaryData, setSalaryData] = useState([]);
+  const [radialData, setRadialData] = useState([]);
 
   const handleDataFieldChange = (event) => {
     setDataFieldOption(event.target.value);
@@ -37,12 +38,15 @@ export default function Insights({}) {
     setBarChartKeys([...keys[dataFieldOption]]);
     setDatasetData([...data[dataFieldOption]["dataset"]]);
     setSalaryData([...data[dataFieldOption]["salary"][salaryOption]]);
+    setRadialData([...data[dataFieldOption]["salary"]["radial"]]);
   }, []);
 
   useEffect(() => {
     setBarChartKeys([...keys[dataFieldOption]]);
     setDatasetData([...data[dataFieldOption]["dataset"]]);
-  }, [datasetData]);
+    setSalaryData([...data[dataFieldOption]["salary"][salaryOption]]);
+    setRadialData([...data[dataFieldOption]["salary"]["radial"]]);
+  }, [dataFieldOption]);
 
   useEffect(() => {
     setSalaryData([...data[dataFieldOption]["salary"][salaryOption]]);
@@ -55,7 +59,6 @@ export default function Insights({}) {
         <div className={styles["insights-radio-group"]}>
           <div className={styles["insights-radio-group-title"]}>Data Field</div>
           <FormControl fullWidth>
-            <InputLabel id="insights-select-label">Age</InputLabel>
             <Select
               labelId="insights-select-label"
               id="insights-select"
@@ -66,7 +69,7 @@ export default function Insights({}) {
               <MenuItem value="sex">Sex</MenuItem>
               <MenuItem value="race">Race</MenuItem>
               <MenuItem value="education">Education</MenuItem>
-              <MenuItem value="workerClass">Worker Class</MenuItem>
+              <MenuItem value="jobType">Job Type</MenuItem>
               <MenuItem value="maritalStatus">Marital Status</MenuItem>
               <MenuItem value="insurance">Insurance</MenuItem>
               <MenuItem value="englishSkills">English Skills</MenuItem>
@@ -77,155 +80,100 @@ export default function Insights({}) {
           <div className={styles["insights-dataset-chart-title"]}>
             Dataset Distribution
           </div>
-          <CustomBarChart data={datasetData} keys={barChartKeys}/>
+          <CustomBarChart data={datasetData} keys={barChartKeys} />
         </div>
-        <div className={styles["insights-salary-chart"]}>
+        <div className={styles["insights-salary-chart"]} style={{height: dataFieldOption !== "education" ? "400px" : "0px"}}>
           <div className={styles["insights-salary-chart-title"]}>
             Annual Salary Distribution
           </div>
-          <FormControl>
-            <RadioGroup
-              row
-              aria-labelledby="salary-radio-buttons-group-label"
-              name="salary-radio-buttons-group"
-              value={salaryOption}
-              onChange={handleSalaryChange}
-            >
-              <FormControlLabel
-                sx={{
-                  color: "#7871aa",
-                }}
-                value="under25k"
-                control={
-                  <Radio
+          {dataFieldOption !== "education" && (
+            <>
+              <FormControl>
+                <RadioGroup
+                  row
+                  aria-labelledby="salary-radio-buttons-group-label"
+                  name="salary-radio-buttons-group"
+                  value={salaryOption}
+                  onChange={handleSalaryChange}
+                >
+                  <FormControlLabel
                     sx={{
                       color: "#7871aa",
-                      "&.Mui-checked": {
-                        color: "#7871aa",
-                      },
                     }}
+                    value="under25k"
+                    control={
+                      <Radio
+                        sx={{
+                          color: "#7871aa",
+                          "&.Mui-checked": {
+                            color: "#7871aa",
+                          },
+                        }}
+                      />
+                    }
+                    label="Under US$25,000"
                   />
-                }
-                label="Under US$25,000"
-              />
-              <FormControlLabel
-                sx={{
-                  color: "#7871aa",
-                }}
-                value="25To50k"
-                control={
-                  <Radio
+                  <FormControlLabel
                     sx={{
                       color: "#7871aa",
-                      "&.Mui-checked": {
-                        color: "#7871aa",
-                      },
                     }}
+                    value="25To50k"
+                    control={
+                      <Radio
+                        sx={{
+                          color: "#7871aa",
+                          "&.Mui-checked": {
+                            color: "#7871aa",
+                          },
+                        }}
+                      />
+                    }
+                    label="US$25,000 to US$50,000"
                   />
-                }
-                label="US$25,000 to US$50,000"
-              />
-              <FormControlLabel
-                sx={{
-                  color: "#7871aa",
-                }}
-                value="50To75k"
-                control={
-                  <Radio
+                  <FormControlLabel
                     sx={{
                       color: "#7871aa",
-                      "&.Mui-checked": {
-                        color: "#7871aa",
-                      },
                     }}
+                    value="50To75k"
+                    control={
+                      <Radio
+                        sx={{
+                          color: "#7871aa",
+                          "&.Mui-checked": {
+                            color: "#7871aa",
+                          },
+                        }}
+                      />
+                    }
+                    label="US$50,000 to US$75,000"
                   />
-                }
-                label="US$50,000 to US$75,000"
-              />
-              <FormControlLabel
-                sx={{
-                  color: "#7871aa",
-                }}
-                value="over75k"
-                control={
-                  <Radio
+                  <FormControlLabel
                     sx={{
                       color: "#7871aa",
-                      "&.Mui-checked": {
-                        color: "#7871aa",
-                      },
                     }}
+                    value="over75k"
+                    control={
+                      <Radio
+                        sx={{
+                          color: "#7871aa",
+                          "&.Mui-checked": {
+                            color: "#7871aa",
+                          },
+                        }}
+                      />
+                    }
+                    label="Over US$75,000"
                   />
-                }
-                label="Over US$75,000"
-              />
-            </RadioGroup>
-          </FormControl>
-          <CustomPieChart data={salaryData} />
+                </RadioGroup>
+              </FormControl>
+              <CustomPieChart data={salaryData} />
+            </>
+          )}
+        </div>
+        <div className={styles["insights-radial-chart"]}>
+          <CustomRadialBarChart data={radialData} />
         </div>
       </div>
-      {/* <div className={styles["insights-content"]}>
-        <div className={styles["insights-left"]}>
-          <div className={styles["insights-chart-container"]}>
-            <h3 className={styles["insights-chart-title"]}>Sex</h3>
-            <div className={styles["insights-chart"]}>
-              <CustomPieChart />
-            </div>
-            <div className={styles["insights-chart-description"]}>
-              Short Description
-            </div>
-          </div>
-          <div className={styles["insights-chart-container"]}>
-            <h3 className={styles["insights-chart-title"]}>Education</h3>
-            <div className={styles["insights-chart"]}>
-              <CustomPieChart />
-            </div>
-            <div className={styles["insights-chart-description"]}>
-              Short Description
-            </div>
-          </div>
-          <div className={styles["insights-chart-container"]}>
-            <h3 className={styles["insights-chart-title"]}>
-              Employment Status
-            </h3>
-            <div className={styles["insights-chart"]}>
-              <CustomPieChart />
-            </div>
-            <div className={styles["insights-chart-description"]}>
-              Short Description
-            </div>
-          </div>
-        </div>
-        <div className={styles["insights-right"]}>
-          <div className={styles["insights-chart-container"]}>
-            <h3 className={styles["insights-chart-title"]}>Race</h3>
-            <div className={styles["insights-chart"]}>
-              <CustomBarChart />
-            </div>
-            <div className={styles["insights-chart-description"]}>
-              Short Description
-            </div>
-          </div>
-          <div className={styles["insights-chart-container"]}>
-            <h3 className={styles["insights-chart-title"]}>Worker Class</h3>
-            <div className={styles["insights-chart"]}>
-              <CustomBarChart />
-            </div>
-            <div className={styles["insights-chart-description"]}>
-              Short Description
-            </div>
-          </div>
-          <div className={styles["insights-chart-container"]}>
-            <h3 className={styles["insights-chart-title"]}>Marital Status</h3>
-            <div className={styles["insights-chart"]}>
-              <CustomBarChart />
-            </div>
-            <div className={styles["insights-chart-description"]}>
-              Short Description
-            </div>
-          </div>
-        </div>
-      </div> */}
     </section>
   );
 }
