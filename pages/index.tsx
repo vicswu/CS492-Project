@@ -11,6 +11,7 @@ import About from "../components/About";
 import Insights from "../components/Insights";
 import Biases from "../components/Biases";
 import Activity from "../components/Activity";
+import Methodology from "../components/Methodology";
 
 export default function Home() {
   const [menu, setMenu] = useState(false);
@@ -35,10 +36,20 @@ export default function Home() {
           <About />
           <Insights />
           <Biases />
-          <Activity />
+
+          {/* TODO: Complete "Try It Yourself" section (Link with Backend API) */}
+          {/* <Activity /> */}
+
+          {/* TODO: Add "Methodology" section */}
+          <Methodology />
+
+          {/* TODO: Github Repo section */}
         </div>
         <footer className={styles["copyright-container"]}>
-          <small className={styles["copyright-text"]}>&copy; Copyright 2023 Victor Wu, Shaishav Patel, Alexander Kung, Jaswin Hargun</small>{" "}
+          <small className={styles["copyright-text"]}>
+            &copy; Copyright 2023 Victor Wu, Alexander Kung, Jaswin Hargun,
+            Shaishav Patel
+          </small>{" "}
         </footer>
       </main>
     </>

@@ -1,10 +1,9 @@
 import { ResponsivePie } from "@nivo/pie";
-import { genderData } from "../../../lib/insightsData";
 
 export default function CustomPieChart({ data }) {
   return (
     <ResponsivePie
-      data={genderData}
+      data={data}
       theme={{
         tooltip: {
           container: {
@@ -14,7 +13,8 @@ export default function CustomPieChart({ data }) {
           },
         },
       }}
-      margin={{ top: 40, right: 60, bottom: 60, left: 60 }}
+      colors={{ scheme: 'pastel1' }}
+      margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
       innerRadius={0.35}
       padAngle={0.7}
       cornerRadius={3}
@@ -25,11 +25,36 @@ export default function CustomPieChart({ data }) {
         modifiers: [["brighter", 0.2]],
       }}
       arcLinkLabelsSkipAngle={10}
-      arcLinkLabelsTextColor="#e7ebc5"
-      arcLinkLabelsThickness={3}
+      arcLinkLabelsTextColor="#333333"
+      arcLinkLabelsThickness={2}
       arcLinkLabelsColor={{ from: "color" }}
       arcLabelsSkipAngle={10}
-      arcLabelsTextColor="#5c50b4"
+      arcLabelsTextColor="black"
+      legends={[
+        {
+          anchor: "bottom",
+          direction: "row",
+          justify: false,
+          translateX: 0,
+          translateY: 56,
+          itemsSpacing: 0,
+          itemWidth: 100,
+          itemHeight: 18,
+          itemTextColor: "#999",
+          itemDirection: "left-to-right",
+          itemOpacity: 1,
+          symbolSize: 18,
+          symbolShape: "circle",
+          effects: [
+            {
+              on: "hover",
+              style: {
+                itemTextColor: "#7871aa",
+              },
+            },
+          ],
+        },
+      ]}
     />
   );
 }

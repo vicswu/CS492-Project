@@ -123,7 +123,7 @@ export default function Navbar({ menu, setMenu }) {
                 </div>
               </a>
             </ul>
-            <ul>
+            {/* <ul>
               <a
                 href="#activity"
                 className={concatClassName(
@@ -136,7 +136,8 @@ export default function Navbar({ menu, setMenu }) {
                   <div className={styles["menu-section-name"]}>Activity</div>
                 </div>
               </a>
-            </ul>
+            </ul> */}
+
           </div>
         </div>
       </Slide>

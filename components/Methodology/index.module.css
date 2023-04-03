@@ -1,0 +1,59 @@
+.methodology {
+  justify-content: inherit;
+  width: 100vw;
+  font-family: var(--font-mono);
+  height: 100vh;
+  padding: 7rem 0rem 0rem 0rem;
+  color: #e7ebc5;
+  align-items: center;
+}
+
+.methodology-title {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+}
+
+.methodology-content {
+  display: flex;
+  margin-top: 3rem;
+}
+
+.methodology-left {
+  position: relative;
+  width: 75vw;
+  height: 50vh;
+  background-color: #e7ebc5;
+  border-radius: 0px 25px 25px 0px;
+}
+
+.methodology-text {
+  margin-bottom: 1rem;
+  line-height: 1.25;
+  padding-right: 1.5rem;
+  color: #7871aa;
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+.methodology-right {
+  position: relative;
+  width: 25vw;
+  height: 50vh;
+  align-items: center;
+}
+
+.methodology-github-container {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.methodology-github-title {
+  margin-bottom: 1rem;
+  font-size: large;
+  font-weight: 600;
+}
+
+.methodology-github-icon:hover {
+    background-color: aqua;
+}

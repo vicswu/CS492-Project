@@ -9,6 +9,12 @@ First, you will need Node v18.12.1. You can use nvm to install and update your N
 nvm install v18.12.1
 ```
 
+To install the Node dependencies, please run the following command in the main directory:
+
+```
+npm install
+```
+
 Next, run the development server:
 
 ```bash

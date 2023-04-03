@@ -10,15 +10,6 @@ import Image from "next/image";
 import { aboutText } from "../../lib/textContent";
 
 export default function About({}) {
-  // Temp solution for Lorem Ipsum generator
-  const [hydrated, setHydrated] = useState(false);
-  useEffect(() => {
-    setHydrated(true);
-  }, []);
-  if (!hydrated) {
-    // Returns null on first render, so the client and server match
-    return null;
-  }
 
   return (
     <section id="about" className={styles.about}>
