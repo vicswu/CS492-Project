@@ -205,9 +205,9 @@ export default function Biases({}) {
                   data={observationData}
                   keys={["predicted averave income"]}
                 />
-                <div className={styles["biases-observations-explanation"]}>
+                {/* <div className={styles["biases-observations-explanation"]}>
                   Short Paragraph
-                </div>
+                </div> */}
               </div>
             );
           })}
