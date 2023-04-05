@@ -38,7 +38,7 @@ export default function Home() {
           <Biases />
 
           {/* TODO: Complete "Try It Yourself" section (Link with Backend API) */}
-          {/* <Activity /> */}
+          <Activity />
 
           {/* TODO: Add "Methodology" section */}
           <Methodology />

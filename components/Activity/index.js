@@ -6,6 +6,7 @@ import styles from "./index.module.css";
 // Helper Functions
 
 // Components
+import { useForm } from "react-hook-form";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -14,7 +15,7 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import Switch from "@mui/material/Switch";
 import FormGroup from "@mui/material/FormGroup";
-import TextField from '@mui/material/TextField';
+import TextField from "@mui/material/TextField";
 import Divider from "@mui/material/Divider";
 import CountUp from "react-countup";
 
@@ -25,10 +26,18 @@ export default function Activity({}) {
     setRace(event.target.value);
   };
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
+  console.log(errors);
+
   return (
     <section id="activity" className={styles.activity}>
       <h1 className={styles["activity-title"]}>Activity</h1>
-      <div className={styles["activity-content"]}>
+      {/* <div className={styles["activity-content"]}>
         <div className={styles["activity-left"]}>
           <div className={styles["biases-radio-group"]}>
             <div className={styles["biases-radio-group-title"]}>Sex</div>
@@ -211,6 +220,98 @@ export default function Activity({}) {
             />
           </div>
         </div>
+      </div> */}
+      <div className={styles["activity-content"]}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <select {...register("Sex", { required: true })}>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+          <select {...register("Race", { required: true })}>
+            <option value="isAmericanIndian">isAmericanIndian</option>
+            <option value="isAsian">isAsian</option>
+            <option value="isBlack">isBlack</option>
+            <option value="isPacificIslander">isPacificIslander</option>
+            <option value="isWhite">isWhite</option>
+            <option value="isOtherRace">isOtherRace</option>
+          </select>
+          <select {...register("Education")}>
+            <option value="maxGrade4">maxGrade4</option>
+            <option value=" maxGrade8"> maxGrade8</option>
+            <option value=" maxSomeHS"> maxSomeHS</option>
+            <option value=" highSchoolDiploma"> highSchoolDiploma</option>
+            <option value=" someCollege"> someCollege</option>
+            <option value="        associatesDegree"> associatesDegree</option>
+            <option value=" bachelorsDegree"> bachelorsDegree</option>
+            <option value=" mastersDegree"> mastersDegree</option>
+            <option value="        bachelorsPlusProfessionalDegree">
+              {" "}
+              bachelorsPlusProfessionalDegree
+            </option>
+            <option value=" doctoralDegree"> doctoralDegree</option>
+            <option value=" has2ndDegree"> has2ndDegree</option>
+          </select>
+          <input
+            type="number"
+            placeholder="Age"
+            {...register("Age", { required: true, max: 100, min: 1 })}
+          />
+          <select {...register("Marital Status", { required: true })}>
+            <option value="isMarried">isMarried</option>
+            <option value=" wasMarried"> wasMarried</option>
+            <option value=" neverMarried"> neverMarried</option>
+          </select>
+          <select {...register("English Skills", { required: true })}>
+            <option value="speaksEnglish">speaksEnglish</option>
+            <option value="speaksOnlyEnglish">speaksOnlyEnglish</option>
+            <option value=" speaksEnglishWell"> speaksEnglishWell</option>
+          </select>
+          <select {...register("Job Type", { required: true })}>
+            <option value="isSelfEmployed">isSelfEmployed</option>
+            <option value="isPrivateSector">isPrivateSector</option>
+            <option value=" isPublicSector"> isPublicSector</option>
+            <option value=" isUnpaidFamilyWorker"> isUnpaidFamilyWorker</option>
+          </select>
+          <select {...register("Insurance", { required: true })}>
+            <option value="hasPrivateHealthInsurance">
+              hasPrivateHealthInsurance
+            </option>
+            <option value="hasEmployerHealthInsurance">
+              hasEmployerHealthInsurance
+            </option>
+            <option value=" hasPurchasedPrivHealthInsurance">
+              {" "}
+              hasPurchasedPrivHealthInsurance
+            </option>
+            <option value="hasMilitaryHealthInsurance">
+              hasMilitaryHealthInsurance
+            </option>
+            <option value=" hasPublicHealthInsurance">
+              {" "}
+              hasPublicHealthInsurance
+            </option>
+            <option value="hasMedicare">hasMedicare</option>
+            <option value="hasMedicaid">hasMedicaid</option>
+            <option value=" hasVeteransHealthInsurance">
+              {" "}
+              hasVeteransHealthInsurance
+            </option>
+            <option value="hasIndianHealthInsurance">
+              hasIndianHealthInsurance
+            </option>
+            <option value=" hasHealthInsurance"> hasHealthInsurance</option>
+          </select>
+          <select {...register("Commute", { required: true })}>
+            <option value="commutePrivateVehicle">commutePrivateVehicle</option>
+            <option value="commutePublicTransportation">
+              commutePublicTransportation
+            </option>
+            <option value=" commuteBikeOrWalk"> commuteBikeOrWalk</option>
+            <option value="workFromHome">workFromHome</option>
+          </select>
+
+          <input type="submit" />
+        </form>
       </div>
     </section>
   );
