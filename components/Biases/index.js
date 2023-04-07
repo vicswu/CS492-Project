@@ -231,6 +231,7 @@ export default function Biases({}) {
                 duration={2.5}
                 useEasing={true}
                 prefix="US$"
+                decimals={2}
               />
             </div>
             <div className={styles["biases-result"]}>
@@ -243,6 +244,7 @@ export default function Biases({}) {
                 duration={2.5}
                 useEasing={true}
                 prefix="US$"
+                decimals={2}
               />
             </div>
             <div className={styles["biases-result"]}>
@@ -255,6 +257,7 @@ export default function Biases({}) {
                 duration={2.5}
                 useEasing={true}
                 prefix="US$"
+                decimals={2}
               />
             </div>
             <div className={styles["biases-result"]}>
@@ -267,6 +270,7 @@ export default function Biases({}) {
                 duration={2.5}
                 useEasing={true}
                 prefix="US$"
+                decimals={2}
               />
             </div>
           </div>

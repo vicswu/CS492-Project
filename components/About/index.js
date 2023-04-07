@@ -15,7 +15,7 @@ export default function About({}) {
       <div className={styles["about-content"]}>
         <div className={styles["about-left"]}>
           {aboutText.map((text) => (
-            <p className={styles["about-text"]}>{text}</p>
+            <p className={styles["about-text"]} key={text}>{text}</p>
           ))}
         </div>
         <div className={styles["about-right"]}>

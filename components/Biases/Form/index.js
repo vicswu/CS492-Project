@@ -1,6 +1,7 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Button from "@mui/material/Button";
+import Divider from "@mui/material/Divider";
 
 import styles from "./index.module.css";
 
@@ -9,14 +10,16 @@ import FormInputDropdown from "./FormComponents/FormInputDropdown";
 import FormInputMultiCheckbox from "./FormComponents/FormInputMultiCheckbox";
 import FormInputRadio from "./FormComponents/FormInputRadio";
 import FormInputAutoComplete from "./FormComponents/FormInputAutoComplete";
+import CountUp from "react-countup";
 
 export default function Form({}) {
+  const [result, setResult] = useState({});
   const methods = useForm({
     defaultValues: {
-      AGE: "",
-      WKSWORK1: "",
-      UHRSWORK: "",
-      TRANTIME: "",
+      AGE: 0,
+      WKSWORK1: 0,
+      UHRSWORK: 0,
+      TRANTIME: 0,
       sex: null,
       race: [],
       maritalStatus: "",
@@ -40,10 +43,10 @@ export default function Form({}) {
   });
   const { handleSubmit, control, setValue, watch } = methods;
   const onSubmit = (data, e) => {
-    let newData = {};
+    let newData = {...data};
     if (
       data.insurance === "hasEmployerHealthInsurance" ||
-      data.insurance === "hasEmployerHealthInsurance" ||
+      data.insurance === "hasPurchasedPrivHealthInsurance" ||
       data.insurance === "hasMilitaryHealthInsurance"
     ) {
       newData = {
@@ -51,7 +54,6 @@ export default function Form({}) {
         hasPrivateHealthInsurance: "hasPrivateHealthInsurance",
         hasHealthInsurance: "hasHealthInsurance",
       };
-      // Send to API
     } else if (
       data.insurance === "hasMedicare" ||
       data.insurance === "hasMedicaid" ||
@@ -62,10 +64,23 @@ export default function Form({}) {
         hasPublicHealthInsurance: "hasPublicHealthInsurance",
         hasHealthInsurance: "hasHealthInsurance",
       };
-      // Send to API
     }
+    const formattedAge = parseInt(newData.AGE, 10);
+    const formattedWksWork1 = parseInt(newData.WKSWORK1, 10);
+    const formattedUhrsWork = parseInt(newData.UHRSWORK, 10);
+    const formattedTranTime = parseInt(newData.TRANTIME, 10);
+
+    newData = {
+      ...newData,
+      AGE: formattedAge,
+      WKSWORK1: formattedWksWork1,
+      UHRSWORK: formattedUhrsWork,
+      TRANTIME: formattedTranTime
+    }
+
     e.preventDefault();
     const postData = async () => {
+      console.log(newData);
       const response = await fetch(
         "https://cs492-inference-service.azurewebsites.net/run-inference",
         {
@@ -79,7 +94,8 @@ export default function Form({}) {
       return response.json();
     };
     postData().then((data) => {
-      console.log(data.message);
+      console.log(data);
+      setResult(data);
     });
   };
   const watchCheckbox = watch("race");
@@ -300,27 +316,82 @@ export default function Form({}) {
             className={styles["form-button"]}
             onClick={handleSubmit(onSubmit)}
             variant={"contained"}
-            disabled={
-              !watchNumber ||
-              watchNumber.includes("") ||
-              watchNumber.some((v) => v < 0 || v > 168) ||
-              !watchRadio ||
-              watchRadio.includes(null) ||
-              watchCheckbox.length == 0 ||
-              !watchDropdown ||
-              watchDropdown.includes("") ||
-              !watchAutocomplete ||
-              watchAutocomplete.includes("")
-            }
+            // disabled={
+            //   !watchNumber ||
+            //   watchNumber.includes("") ||
+            //   watchNumber.some((v) => v < 0 || v > 168) ||
+            //   !watchRadio ||
+            //   watchRadio.includes(null) ||
+            //   watchCheckbox.length == 0 ||
+            //   !watchDropdown ||
+            //   watchDropdown.includes("") ||
+            //   !watchAutocomplete ||
+            //   watchAutocomplete.includes("")
+            // }
           >
             {" "}
             Submit{" "}
           </Button>
         </div>
       </div>
-      <div className={styles["results"]}>
-        <div className={styles["results-title"]}>Result</div>
-      </div>
+      {result.allFields &&
+        result.notProtectedFields &&
+        result.protectedFields && (
+          <div className={styles["results"]}>
+            <div className={styles["results-title"]}>Results</div>
+            <div className={styles["results-description"]}>
+              Here are the our model's prediction for your annual income given
+              the information you've filled above:
+            </div>
+            <div className={styles["results-content"]}>
+              <div className={styles["results-model"]}>
+                <div className={styles["results-text"]}>Main Model</div>
+                <div className={styles["results-value"]}>
+                  <CountUp
+                    className={styles["results-value-number"]}
+                    end={result.allFields}
+                    duration={2.5}
+                    useEasing={true}
+                    prefix="US$"
+                    decimals={2}
+                  />
+                </div>
+              </div>
+              <Divider orientation="vertical" flexItem />
+              <div className={styles["results-model"]}>
+                <div className={styles["results-text"]}>
+                  No Protected Fields Model
+                </div>
+                <div className={styles["results-value"]}>
+                  <CountUp
+                    className={styles["results-value-number"]}
+                    end={result.notProtectedFields}
+                    duration={2.5}
+                    useEasing={true}
+                    prefix="US$"
+                    decimals={2}
+                  />
+                </div>
+              </div>
+              <Divider orientation="vertical" flexItem />
+              <div className={styles["results-model"]}>
+                <div className={styles["results-text"]}>
+                  Protected Fields Only Model
+                </div>
+                <div className={styles["results-value"]}>
+                  <CountUp
+                    className={styles["results-value-number"]}
+                    end={result.protectedFields}
+                    duration={2.5}
+                    useEasing={true}
+                    prefix="US$"
+                    decimals={2}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
     </div>
   );
 }

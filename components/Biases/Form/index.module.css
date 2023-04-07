@@ -50,4 +50,36 @@
   align-items: center;
   font-size: large;
   padding-left: 2rem;
+  padding-top: 2rem;
+}
+
+.results-description {
+  color: #7871aa;
+  padding-left: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.results-content {
+  display: flex;
+  width: 100%;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.results-model {
+  margin: auto;
+  align-items: center;
+  text-align: center;
+}
+
+.results-text {
+  color: #7871aa;
+  font-weight: 600;
+}
+
+.results-value {
+  color: #7871aa;
+  font-weight: 500;
+  margin-top: 0.5rem;
 }
