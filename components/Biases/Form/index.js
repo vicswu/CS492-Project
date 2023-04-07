@@ -39,30 +39,48 @@ export default function Form({}) {
     },
   });
   const { handleSubmit, control, setValue, watch } = methods;
-  const onSubmit = (data) => {
+  const onSubmit = (data, e) => {
+    let newData = {};
     if (
       data.insurance === "hasEmployerHealthInsurance" ||
       data.insurance === "hasEmployerHealthInsurance" ||
       data.insurance === "hasMilitaryHealthInsurance"
     ) {
-      console.log({
+      newData = {
         ...data,
         hasPrivateHealthInsurance: "hasPrivateHealthInsurance",
-        hasHealthInsurance: "hasHealthInsurance"
-      });
+        hasHealthInsurance: "hasHealthInsurance",
+      };
       // Send to API
     } else if (
       data.insurance === "hasMedicare" ||
       data.insurance === "hasMedicaid" ||
       data.insurance === "hasVeteransHealthInsurance"
     ) {
-      console.log({
+      newData = {
         ...data,
         hasPublicHealthInsurance: "hasPublicHealthInsurance",
-        hasHealthInsurance: "hasHealthInsurance"
-      });
+        hasHealthInsurance: "hasHealthInsurance",
+      };
       // Send to API
     }
+    e.preventDefault();
+    const postData = async () => {
+      const response = await fetch(
+        "https://cs492-inference-service.azurewebsites.net/run-inference",
+        {
+          method: "POST",
+          body: JSON.stringify(newData),
+          headers: {
+            "Content-type": "application/json",
+          },
+        }
+      );
+      return response.json();
+    };
+    postData().then((data) => {
+      console.log(data.message);
+    });
   };
   const watchCheckbox = watch("race");
   const watchRadio = watch(
