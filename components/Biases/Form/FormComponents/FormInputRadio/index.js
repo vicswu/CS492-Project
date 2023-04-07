@@ -13,7 +13,7 @@ const options = {
     },
     {
       label: "Male",
-      value: null,
+      value: "",
     },
   ],
   maritalStatus: [
@@ -37,7 +37,7 @@ const options = {
     },
     {
       label: "No",
-      value: null,
+      value: "",
     },
   ],
   sameSexMarriage: [
@@ -47,7 +47,7 @@ const options = {
     },
     {
       label: "No",
-      value: null,
+      value: "",
     },
   ],
   mixedRaceMarriage: [
@@ -57,7 +57,7 @@ const options = {
     },
     {
       label: "No",
-      value: null,
+      value: "",
     },
   ],
   isInSchool: [
@@ -67,7 +67,7 @@ const options = {
     },
     {
       label: "No",
-      value: null,
+      value: "",
     },
   ],
   carpools: [
@@ -77,7 +77,7 @@ const options = {
     },
     {
       label: "No",
-      value: null,
+      value: "",
     },
   ],
   isGroupQuarters: [
@@ -87,7 +87,7 @@ const options = {
     },
     {
       label: "No",
-      value: null,
+      value: "",
     },
   ],
   englishSkill: [
@@ -105,7 +105,7 @@ const options = {
     },
     {
       label: "Does not Speak English",
-      value: null,
+      value: "",
     },
   ],
   has2ndDegree: [
@@ -115,7 +115,7 @@ const options = {
     },
     {
       label: "No",
-      value: null,
+      value: "",
     },
   ],
   workType: [
@@ -134,10 +134,6 @@ const options = {
     {
       label: "Unpaid Family Worker",
       value: "isUnpaidFamilyWorker",
-    },
-    {
-      label: "N/A",
-      value: null,
     },
   ],
   commute: [
@@ -159,7 +155,7 @@ const options = {
     },
     {
       label: "N/A",
-      value: null,
+      value: "",
     },
   ],
   schoolType: [
@@ -173,7 +169,7 @@ const options = {
     },
     {
       label: "Not in School",
-      value: null,
+      value: "",
     },
   ],
 };

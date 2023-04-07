@@ -111,5 +111,9 @@
 .biases-activity-title {
   text-transform: uppercase;
   margin-top: 7rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+}
+
+.biases-activity-description {
+  margin-bottom: 2rem;
 }

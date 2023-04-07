@@ -10,6 +10,21 @@
   text-transform: uppercase;
 }
 
+.insights-description {
+  color: #e7ebc5;
+  margin-top: 1rem;
+}
+
+.insights-description-list {
+  margin-left: 4rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.insights-description-list-item {
+  margin-bottom: 1rem;
+}
+
 .insights-content {
   width: 95vw;
   border-radius: 25px;

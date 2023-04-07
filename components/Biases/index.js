@@ -201,9 +201,7 @@ export default function Biases({}) {
             </div>
           </div>
           <div className={styles["biases-shap"]}>
-            <div className={styles["biases-shap-title"]}>
-              SHAP Plot
-            </div>
+            <div className={styles["biases-shap-title"]}>SHAP Plot</div>
             <div className={styles["biases-shap-image"]}>
               <Image
                 className={styles["shap-image"]}
@@ -234,6 +232,14 @@ export default function Biases({}) {
         </div>
       </div>
       <h1 className={styles["biases-activity-title"]}>Try It Yourself</h1>
+      <div className={styles["biases-activity-description"]}>
+        We have provided information about the general trends in predictions in
+        our Biases section. Now, you have the opportunity to test the
+        models yourself. Enter data about a theoretical person and see what each
+        of our models thinks their salary would be. Note that the model was
+        trained and evaluated on employed Americans, so the information you
+        enter must match this description.
+      </div>
       <div className={styles["biases-activity-content"]}>
         <Form />
       </div>

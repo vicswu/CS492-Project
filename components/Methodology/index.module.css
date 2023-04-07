@@ -3,7 +3,7 @@
   width: 100vw;
   font-family: var(--font-mono);
   height: 100vh;
-  padding: 7rem 0rem 0rem 0rem;
+  padding: 5rem 0rem 0rem 0rem;
   color: #e7ebc5;
   align-items: center;
 }
@@ -22,9 +22,9 @@
 .methodology-left {
   position: relative;
   width: 75vw;
-  height: 50vh;
   background-color: #e7ebc5;
   border-radius: 0px 25px 25px 0px;
+  display: block;
 }
 
 .methodology-text {

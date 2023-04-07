@@ -66,7 +66,6 @@ export default function FormInputAutoComplete({ name, control, label }) {
       { label: "Puerto Rico", value: "worksIn_Puerto_Rico" },
     ],
     degree: [
-      { label: "No Degree", value: null },
       { label: "Agriculture", value: "hasDegree_Agriculture" },
       {
         label: "Environment and Natural Resources",
@@ -183,12 +182,6 @@ export default function FormInputAutoComplete({ name, control, label }) {
       { label: "History", value: "hasDegree_History" },
     ],
     occupation: [
-      {
-        label:
-          "Unemployed with No Work Experience in the Last 5 Years or Earlier or Never Worked",
-        value:
-          "occupation_Unemployed_with_No_Work_Experience_in_the_Last_5_Years_or_Earlier_or_Never_Worked",
-      },
       {
         label: "Chief executives and legislators/public administration",
         value:
@@ -1833,10 +1826,15 @@ export default function FormInputAutoComplete({ name, control, label }) {
             id="combo-box-demo"
             options={options[name]}
             sx={{ width: 300 }}
+            isOptionEqualToValue={(option, value) => {
+              // console.log(`option is ${option.value}`);
+              // console.log(`value is ${value.value}`)
+              return option.value === value.value;
+            }}
+            onChange={(_, value) => onChange(value.value)}
             renderInput={(params) => (
               <TextField
                 {...params}
-                onChange={onChange}
                 value={value}
                 label={label}
               />

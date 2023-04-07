@@ -26,14 +26,6 @@ export default function CustomBarChart({ data, keys }) {
       }}
       axisTop={null}
       axisRight={null}
-      axisBottom={{
-        tickSize: 5,
-        tickPadding: 5,
-        tickRotation: 0,
-        legend: "Dataset",
-        legendPosition: "middle",
-        legendOffset: 32,
-      }}
       axisLeft={{
         tickSize: 5,
         tickPadding: 5,

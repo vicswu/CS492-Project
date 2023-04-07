@@ -6,17 +6,17 @@ import styles from "./index.module.css";
 // Helper Functions
 
 // Components
-import { methodologyText } from "../../lib/textContent";
+import { conclusionText } from "../../lib/textContent";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Link from "@mui/material/Link";
 
 export default function Methodology({}) {
   return (
     <section id="methodology" className={styles.methodology}>
-      <h1 className={styles["methodology-title"]}>Methodology</h1>
+      <h1 className={styles["methodology-title"]}>Conclusion</h1>
       <div className={styles["methodology-content"]}>
         <div className={styles["methodology-left"]}>
-          {methodologyText.map((text) => (
+          {conclusionText.map((text) => (
             <p className={styles["methodology-text"]}>{text}</p>
           ))}
         </div>

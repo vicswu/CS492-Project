@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Button from "@mui/material/Button";
 
@@ -16,29 +17,83 @@ export default function Form({}) {
       WKSWORK1: "",
       UHRSWORK: "",
       TRANTIME: "",
-      sex: "",
+      sex: null,
       race: [],
       maritalStatus: "",
-      bornInUS: "",
-      sameSexMarriage: "",
-      mixedRaceMarriage: "",
+      bornInUS: null,
+      sameSexMarriage: null,
+      mixedRaceMarriage: null,
       insurance: "",
-      isInSchool: "",
-      carpools: "",
-      isGroupQuarters: "",
-      englishSkill: "",
+      isInSchool: null,
+      carpools: null,
+      isGroupQuarters: null,
+      englishSkill: null,
       education: "",
-      has2ndDegree: "",
+      has2ndDegree: null,
       workType: "",
-      commute: "",
-      schoolType: "",
-      workLocation: "",
+      commute: null,
+      schoolType: null,
+      workLocation: null,
       degree: "",
       occupation: "",
     },
   });
-  const { handleSubmit, reset, control, setValue } = methods;
-  const onSubmit = (data) => console.log(data);
+  const { handleSubmit, control, setValue, watch } = methods;
+  const onSubmit = (data) => {
+    if (
+      data.insurance === "hasEmployerHealthInsurance" ||
+      data.insurance === "hasEmployerHealthInsurance" ||
+      data.insurance === "hasMilitaryHealthInsurance"
+    ) {
+      console.log({
+        ...data,
+        hasPrivateHealthInsurance: "hasPrivateHealthInsurance",
+        hasHealthInsurance: "hasHealthInsurance"
+      });
+      // Send to API
+    } else if (
+      data.insurance === "hasMedicare" ||
+      data.insurance === "hasMedicaid" ||
+      data.insurance === "hasVeteransHealthInsurance"
+    ) {
+      console.log({
+        ...data,
+        hasPublicHealthInsurance: "hasPublicHealthInsurance",
+        hasHealthInsurance: "hasHealthInsurance"
+      });
+      // Send to API
+    }
+  };
+  const watchCheckbox = watch("race");
+  const watchRadio = watch(
+    [
+      "sex",
+      "bornInUS",
+      "sameSexMarriage",
+      "mixedRaceMarriage",
+      "isInSchool",
+      "carpools",
+      "isGroupQuarters",
+      "englishSkill",
+      "has2ndDegree",
+      "commute",
+      "schoolType",
+    ],
+    false
+  );
+  const watchDropdown = watch(["insurance", "education"], false);
+  const watchNumber = watch(["AGE", "WKSWORK1", "UHRSWORK", "TRANTIME"], false);
+  const watchAutocomplete = watch(
+    ["workLocation", "degree", "occupation"],
+    false
+  );
+
+  useEffect(() => {
+    const subscription = watch((value, { name, type }) =>
+      console.log(value, name, type)
+    );
+    return () => subscription.unsubscribe();
+  }, [watch]);
 
   return (
     <div>
@@ -227,6 +282,18 @@ export default function Form({}) {
             className={styles["form-button"]}
             onClick={handleSubmit(onSubmit)}
             variant={"contained"}
+            disabled={
+              !watchNumber ||
+              watchNumber.includes("") ||
+              watchNumber.some((v) => v < 0 || v > 168) ||
+              !watchRadio ||
+              watchRadio.includes(null) ||
+              watchCheckbox.length == 0 ||
+              !watchDropdown ||
+              watchDropdown.includes("") ||
+              !watchAutocomplete ||
+              watchAutocomplete.includes("")
+            }
           >
             {" "}
             Submit{" "}

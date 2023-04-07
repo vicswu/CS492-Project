@@ -8,11 +8,7 @@ import { useFormContext, Controller } from "react-hook-form";
 const options = {
   insurance: [
     {
-      label: "Private Health Insurance",
-      value: "hasPrivateHealthInsurance",
-    },
-    {
-      label: "Employer Health Insurance",
+      label: "Employer-Provided Health Insurance",
       value: "hasEmployerHealthInsurance",
     },
     {
@@ -20,12 +16,8 @@ const options = {
       value: "hasPurchasedPrivHealthInsurance",
     },
     {
-      label: "Military Health Insurance",
+      label: "Military Health Insurance (including TRICARE)",
       value: "hasMilitaryHealthInsurance",
-    },
-    {
-      label: "Public Health Insurance",
-      value: "hasPublicHealthInsurance",
     },
     {
       label: "Medicare",
@@ -36,20 +28,12 @@ const options = {
       value: "hasMedicaid",
     },
     {
-      label: "Veterans Health Insurance",
+      label: "Veterans Administration Provided Health Insurance",
       value: "hasVeteransHealthInsurance",
     },
     {
-      label: "Indian Health Insurance",
+      label: "Indian Health Services Health Insurance",
       value: "hasIndianHealthInsurance",
-    },
-    {
-      label: "Health Insurance",
-      value: "hasHealthInsurance",
-    },
-    {
-      label: "No Health Insurance",
-      value: null,
     },
   ],
   education: [
