@@ -133,7 +133,7 @@ export default function Navbar({ menu, setMenu }) {
               >
                 <div className={styles["menu-section-details"]}>
                   <div className={styles["menu-section-number"]}>4.0</div>
-                  <div className={styles["menu-section-name"]}>Activity</div>
+                  <div className={styles["menu-section-name"]}>Try It Yourself</div>
                 </div>
               </a>
             </ul> */}

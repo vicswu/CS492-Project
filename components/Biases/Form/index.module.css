@@ -1,0 +1,53 @@
+.form {
+  width: 95vw;
+  background-color: #e7ebc5;
+  border-radius: 25px;
+}
+
+.form-age {
+  padding: 2rem;
+  width: 25%;
+}
+
+.form-number {
+  padding: 0rem 2rem 2rem 2rem;
+  width: 25%;
+}
+
+.form-radio {
+  padding: 0rem 2rem 2rem 2rem;
+  color: #7871aa;
+}
+
+.form-checkbox {
+  padding: 0rem 2rem 2rem 2rem;
+  color: #7871aa;
+}
+
+.form-dropdown {
+  padding: 0rem 2rem 2rem 1.5rem;
+}
+
+.form-buttons {
+  padding: 0rem 2rem 2rem 2rem;
+}
+
+.form-button {
+  margin-right: 1rem !important;
+}
+
+.results {
+  width: 95vw;
+  margin-top: 3rem;
+  background-color: #e7ebc5;
+  border-radius: 25px;
+}
+
+.results-title {
+  color: #7871aa;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  font-size: large;
+  padding-left: 2rem;
+}

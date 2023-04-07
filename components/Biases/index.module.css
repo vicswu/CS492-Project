@@ -26,10 +26,15 @@
   font-weight: 600;
   display: flex;
   align-items: center;
+  font-size: large;
 }
 
 .biases-popover {
   margin-left: 0.5rem;
+}
+
+.biases-results-shap {
+  display: flex;
 }
 
 .biases-results {
@@ -39,7 +44,8 @@
 
 .biases-result {
   display: flex;
-  margin-bottom: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
 }
 
 .biases-result-title {
@@ -53,6 +59,34 @@
   color: #7871aa;
 }
 
+.biases-shap {
+  width: 75%;
+}
+
+.biases-shap-title {
+  margin-bottom: 1rem;
+  color: #7871aa;
+  font-weight: 600;
+  display: flex;
+}
+
+.biases-shap-image {
+  height: 500px;
+  width: 60%;
+  position: relative;
+  align-items: center;
+  border-radius: 25px;
+}
+
+.shap-image {
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  border-radius: 5%;
+}
+
 .biases-observations {
   width: 100%;
   padding-left: 3rem;
@@ -63,6 +97,7 @@
   margin-top: 2rem;
   color: #7871aa;
   font-weight: 600;
+  font-size: large;
 }
 
 .biases-observations-chart {
@@ -73,21 +108,8 @@
   color: #7871aa;
 }
 
-.biases-shap {
-  width: 100%;
-  padding-left: 3rem;
-}
-
-.biases-shap-title {
-  margin-bottom: 1rem;
-  margin-top: 2rem;
-  color: #7871aa;
-  font-weight: 600;
-}
-
-.biases-shap-image {
-  height: 800px;
-  width: 50%;
-  position: relative;
-  align-items: center;
+.biases-activity-title {
+  text-transform: uppercase;
+  margin-top: 7rem;
+  margin-bottom: 3rem;
 }

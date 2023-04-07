@@ -16,7 +16,10 @@ import Typography from "@mui/material/Typography";
 import CountUp from "react-countup";
 import { data } from "../../lib/biasesData";
 import CustomBarChart from "./CustomBarChart";
+import Form from "./Form";
 import Image from "next/image";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import Link from "@mui/material/Link";
 
 export default function Biases({}) {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -146,52 +149,69 @@ export default function Biases({}) {
             </RadioGroup>
           </FormControl>
         </div>
-        <div className={styles["biases-results"]}>
-          <div className={styles["biases-result"]}>
-            <div className={styles["biases-result-title"]}>Average Income:</div>
-            <CountUp
-              className={styles["biases-result-value"]}
-              end={data[model]["income"]}
-              duration={2.5}
-              useEasing={true}
-              prefix="US$"
-            />
-          </div>
-          <div className={styles["biases-result"]}>
-            <div className={styles["biases-result-title"]}>
-              Predicted Average Income:
+        <div className={styles["biases-results-shap"]}>
+          <div className={styles["biases-results"]}>
+            <div className={styles["biases-result"]}>
+              <div className={styles["biases-result-title"]}>
+                Average Income:
+              </div>
+              <CountUp
+                className={styles["biases-result-value"]}
+                end={data[model]["income"]}
+                duration={2.5}
+                useEasing={true}
+                prefix="US$"
+              />
             </div>
-            <CountUp
-              className={styles["biases-result-value"]}
-              end={data[model]["predictedIncome"]}
-              duration={2.5}
-              useEasing={true}
-              prefix="US$"
-            />
-          </div>
-          <div className={styles["biases-result"]}>
-            <div className={styles["biases-result-title"]}>
-              Average Absolute Error:
+            <div className={styles["biases-result"]}>
+              <div className={styles["biases-result-title"]}>
+                Predicted Average Income:
+              </div>
+              <CountUp
+                className={styles["biases-result-value"]}
+                end={data[model]["predictedIncome"]}
+                duration={2.5}
+                useEasing={true}
+                prefix="US$"
+              />
             </div>
-            <CountUp
-              className={styles["biases-result-value"]}
-              end={data[model]["absoluteError"]}
-              duration={2.5}
-              useEasing={true}
-              prefix="US$"
-            />
-          </div>
-          <div className={styles["biases-result"]}>
-            <div className={styles["biases-result-title"]}>
-              Average Relative Error:
+            <div className={styles["biases-result"]}>
+              <div className={styles["biases-result-title"]}>
+                Average Absolute Error:
+              </div>
+              <CountUp
+                className={styles["biases-result-value"]}
+                end={data[model]["absoluteError"]}
+                duration={2.5}
+                useEasing={true}
+                prefix="US$"
+              />
             </div>
-            <CountUp
-              className={styles["biases-result-value"]}
-              end={data[model]["relativeError"]}
-              duration={2.5}
-              useEasing={true}
-              prefix="US$"
-            />
+            <div className={styles["biases-result"]}>
+              <div className={styles["biases-result-title"]}>
+                Average Relative Error:
+              </div>
+              <CountUp
+                className={styles["biases-result-value"]}
+                end={data[model]["relativeError"]}
+                duration={2.5}
+                useEasing={true}
+                prefix="US$"
+              />
+            </div>
+          </div>
+          <div className={styles["biases-shap"]}>
+            <div className={styles["biases-shap-title"]}>
+              SHAP Plot
+            </div>
+            <div className={styles["biases-shap-image"]}>
+              <Image
+                className={styles["shap-image"]}
+                src={`/${model}.png`}
+                alt="AI Image"
+                fill
+              />
+            </div>
           </div>
         </div>
         <div className={styles["biases-observations"]}>
@@ -212,16 +232,10 @@ export default function Biases({}) {
             );
           })}
         </div>
-        {/* <div className={styles["biases-shap"]}>
-          <div className={styles["biases-shap-title"]}>SHAP Plot</div>
-          <div className={styles["biases-shap-image"]}>
-            <Image
-              src={"/mainModel.png"}
-              alt="AI Image"
-              fill
-            />
-          </div>
-        </div> */}
+      </div>
+      <h1 className={styles["biases-activity-title"]}>Try It Yourself</h1>
+      <div className={styles["biases-activity-content"]}>
+        <Form />
       </div>
     </section>
   );
