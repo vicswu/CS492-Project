@@ -8,6 +8,7 @@ import styles from "@/styles/Home.module.css";
 import Navbar from "../components/Navbar";
 import About from "../components/About";
 import Insights from "../components/Insights";
+import Models from "../components/Models";
 import Biases from "../components/Biases";
 import Methodology from "../components/Methodology";
 
@@ -33,6 +34,7 @@ export default function Home() {
         >
           <About />
           <Insights />
+          <Models />
           <Biases />
           <Methodology />
         </div>

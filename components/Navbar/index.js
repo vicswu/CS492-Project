@@ -111,7 +111,7 @@ export default function Navbar({ menu, setMenu }) {
             </ul>
             <ul>
               <a
-                href="#biases"
+                href="#models"
                 className={concatClassName(
                   styles["menu-section"],
                   scrolled && styles["menu-section-scrolled"]
@@ -119,13 +119,13 @@ export default function Navbar({ menu, setMenu }) {
               >
                 <div className={styles["menu-section-details"]}>
                   <div className={styles["menu-section-number"]}>3.0</div>
-                  <div className={styles["menu-section-name"]}>Biases</div>
+                  <div className={styles["menu-section-name"]}>Models</div>
                 </div>
               </a>
             </ul>
-            {/* <ul>
+            <ul>
               <a
-                href="#activity"
+                href="#biases"
                 className={concatClassName(
                   styles["menu-section"],
                   scrolled && styles["menu-section-scrolled"]
@@ -133,10 +133,10 @@ export default function Navbar({ menu, setMenu }) {
               >
                 <div className={styles["menu-section-details"]}>
                   <div className={styles["menu-section-number"]}>4.0</div>
-                  <div className={styles["menu-section-name"]}>Try It Yourself</div>
+                  <div className={styles["menu-section-name"]}>Biases</div>
                 </div>
               </a>
-            </ul> */}
+            </ul>
             <ul>
               <a
                 href="#methodology"
@@ -146,7 +146,7 @@ export default function Navbar({ menu, setMenu }) {
                 )}
               >
                 <div className={styles["menu-section-details"]}>
-                  <div className={styles["menu-section-number"]}>4.0</div>
+                  <div className={styles["menu-section-number"]}>5.0</div>
                   <div className={styles["menu-section-name"]}>Conclusion</div>
                 </div>
               </a>
