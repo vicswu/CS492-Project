@@ -316,18 +316,18 @@ export default function Form({}) {
             className={styles["form-button"]}
             onClick={handleSubmit(onSubmit)}
             variant={"contained"}
-            // disabled={
-            //   !watchNumber ||
-            //   watchNumber.includes("") ||
-            //   watchNumber.some((v) => v < 0 || v > 168) ||
-            //   !watchRadio ||
-            //   watchRadio.includes(null) ||
-            //   watchCheckbox.length == 0 ||
-            //   !watchDropdown ||
-            //   watchDropdown.includes("") ||
-            //   !watchAutocomplete ||
-            //   watchAutocomplete.includes("")
-            // }
+            disabled={
+              !watchNumber ||
+              watchNumber.includes("") ||
+              watchNumber.some((v) => v < 0 || v > 168) ||
+              !watchRadio ||
+              watchRadio.includes(null) ||
+              watchCheckbox.length == 0 ||
+              !watchDropdown ||
+              watchDropdown.includes("") ||
+              !watchAutocomplete ||
+              watchAutocomplete.includes("")
+            }
           >
             {" "}
             Submit{" "}

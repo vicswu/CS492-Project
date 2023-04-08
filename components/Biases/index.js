@@ -14,7 +14,7 @@ import InfoIcon from "@mui/icons-material/Info";
 import Popover from "@mui/material/Popover";
 import Typography from "@mui/material/Typography";
 import CountUp from "react-countup";
-import { data } from "../../lib/biasesData";
+import { data, text } from "../../lib/biasesData";
 import CustomBarChart from "./CustomBarChart";
 import Form from "./Form";
 import Image from "next/image";
@@ -219,6 +219,9 @@ export default function Biases({}) {
             </RadioGroup>
           </FormControl>
         </div>
+        <div className={styles["biases-model-description"]}>
+          {text[model]["modelDescription"]}
+        </div>
         <div className={styles["biases-results-shap"]}>
           <div className={styles["biases-results"]}>
             <div className={styles["biases-result"]}>
@@ -273,6 +276,18 @@ export default function Biases({}) {
                 decimals={2}
               />
             </div>
+            <div className={styles["biases-result"]}>
+              <div className={styles["biases-result-title"]}>
+                R-Square Value:
+              </div>
+              <CountUp
+                className={styles["biases-result-value"]}
+                end={data[model]["rSquaredValue"]}
+                duration={2.5}
+                useEasing={true}
+                decimals={2}
+              />
+            </div>
           </div>
           <div className={styles["biases-shap"]}>
             <div className={styles["biases-shap-title"]}>SHAP Plot</div>
@@ -286,24 +301,54 @@ export default function Biases({}) {
             </div>
           </div>
         </div>
+        <div className={styles["biases-shap-description"]}>
+          {text[model]["shapDescription"]}
+        </div>
         <div className={styles["biases-observations"]}>
           <div className={styles["biases-observations-title"]}>
             Observations
           </div>
           {data[model]["observations"].map((observationData) => {
             return (
-              <div className={styles["biases-observations-chart"]}>
-                <CustomBarChart
-                  data={observationData}
-                  keys={["predicted averave income"]}
-                />
-                {/* <div className={styles["biases-observations-explanation"]}>
-                  Short Paragraph
-                </div> */}
+              <div className={styles["biases-observations-chart-container"]}>
+                <div className={styles["biases-observations-chart-title"]}>
+                  {observationData.title}
+                </div>
+                <div className={styles["biases-observations-chart"]}>
+                  <CustomBarChart
+                    data={observationData.data}
+                    keys={[
+                      "predicted average income",
+                      "mean absolute error",
+                      "percent",
+                    ]}
+                    axis={observationData.axis}
+                  />
+                </div>
               </div>
             );
           })}
         </div>
+        {text[model]["sexDescription"] !== "" && (
+          <div className={styles["biases-result-description"]}>
+            {text[model]["sexDescription"]}
+          </div>
+        )}
+        {text[model]["maritalStatusDescription"] !== "" && (
+          <div className={styles["biases-result-description"]}>
+            {text[model]["maritalStatusDescription"]}
+          </div>
+        )}
+        {text[model]["raceDescription"] !== "" && (
+          <div className={styles["biases-result-description"]}>
+            {text[model]["raceDescription"]}
+          </div>
+        )}
+        {text[model]["conclusion"] !== "" && (
+          <div className={styles["biases-result-description"]}>
+            {text[model]["conclusion"]}
+          </div>
+        )}
       </div>
       <h1 className={styles["biases-activity-title"]}>Try It Yourself</h1>
       <div className={styles["biases-activity-description"]}>

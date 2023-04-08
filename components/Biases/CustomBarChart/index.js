@@ -1,6 +1,6 @@
 import { ResponsiveBar } from "@nivo/bar";
 
-export default function CustomBarChart({ data, keys }) {
+export default function CustomBarChart({ data, keys, axis }) {
   return (
     <ResponsiveBar
       data={data}
@@ -27,19 +27,11 @@ export default function CustomBarChart({ data, keys }) {
       }}
       axisTop={null}
       axisRight={null}
-      axisBottom={{
-        tickSize: 5,
-        tickPadding: 5,
-        tickRotation: 0,
-        legend: "Data Field",
-        legendPosition: "middle",
-        legendOffset: 32,
-      }}
       axisLeft={{
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "Predicted Average Income (US$)",
+        legend: axis,
         legendPosition: "middle",
         legendOffset: -70,
       }}

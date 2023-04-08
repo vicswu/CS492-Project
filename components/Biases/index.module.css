@@ -51,6 +51,13 @@
   margin-left: 0.5rem;
 }
 
+.biases-model-description {
+  margin-left: 3rem;
+  margin-right: 3rem;
+  color: #7871aa;
+  margin-bottom: 2rem;
+}
+
 .biases-results-shap {
   display: flex;
 }
@@ -105,6 +112,14 @@
   border-radius: 5%;
 }
 
+.biases-shap-description {
+  margin-top: 2rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  color: #7871aa;
+  margin-bottom: 2rem;
+}
+
 .biases-observations {
   width: 100%;
   padding-left: 3rem;
@@ -118,12 +133,30 @@
   font-size: large;
 }
 
+.biases-observations-chart-container {
+  text-align: center;
+}
+
 .biases-observations-chart {
   height: 400px;
 }
 
+.biases-observations-chart-title {
+  color: #7871aa;
+  font-weight: 600;
+  margin: 1rem;
+}
+
 .biases-observations-explanation {
   color: #7871aa;
+}
+
+.biases-result-description {
+  margin-top: 1rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  color: #7871aa;
+  padding-bottom: 2rem;
 }
 
 .biases-activity-title {
