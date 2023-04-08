@@ -63,6 +63,28 @@ export default function Conclusion({}) {
               />
             </Link>
           </div>
+          <div className={styles["conclusion-github-container"]}>
+            <div className={styles["conclusion-github-title"]}>
+              Backend Repository
+            </div>
+            <Link
+              underline="none"
+              color="inherit"
+              href="https://github.com/shaishav-p/cs492-inference-service"
+              target="_blank"
+              rel="noopener"
+            >
+              <GitHubIcon
+                sx={{
+                  "&:hover": {
+                    color: "#333",
+                    transition: "color 0.2s ease-in",
+                  },
+                }}
+                fontSize="large"
+              />
+            </Link>
+          </div>
         </div>
       </div>
     </section>
