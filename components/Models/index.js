@@ -67,11 +67,6 @@ export default function Models({}) {
           real world. Instead, our goal with creating it was to analyze which
           fields it found most useful when predicting salary.
         </div>
-        <div className={styles["models-description-paragraph"]}>
-          More detailed information about the architecture of the neural
-          networks and preprocessing steps used can be found at the bottom of
-          the website.
-        </div>
       </div>
     </section>
   );
