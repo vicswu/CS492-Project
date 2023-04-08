@@ -19,7 +19,7 @@ export default function CustomBarChart({ data, keys }) {
       padding={0.3}
       valueScale={{ type: "linear" }}
       indexScale={{ type: "band", round: true }}
-      colors={{ scheme: 'pastel1' }}
+      colors={{ scheme: "pastel1" }}
       borderColor={{
         from: "color",
         modifiers: [["brighter", 0.2]],

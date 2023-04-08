@@ -187,7 +187,7 @@ export default function Insights({}) {
               <MenuItem value="jobType">Job Type</MenuItem>
               <MenuItem value="maritalStatus">Marital Status</MenuItem>
               <MenuItem value="insurance">Insurance</MenuItem>
-              <MenuItem value="bornInUS">US Citizenship</MenuItem>
+              <MenuItem value="bornInUS">Birthplace</MenuItem>
             </Select>
           </FormControl>
         </div>

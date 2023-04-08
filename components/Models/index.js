@@ -38,7 +38,10 @@ export default function Models({}) {
           <li className={styles["models-description-list-item"]}>
             Respondent’s marital status
             <ul>
-              <li>This includes whether respondent is in a same sex or mixed race marriage</li>
+              <li>
+                This includes whether respondent is in a same sex or mixed race
+                marriage
+              </li>
             </ul>
           </li>
         </ol>

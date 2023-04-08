@@ -90,7 +90,7 @@ const options = {
       value: "",
     },
   ],
-  englishSkill: [
+  englishProficiency: [
     {
       label: "Speaks English",
       value: "speaksEnglish",

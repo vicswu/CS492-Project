@@ -74,7 +74,7 @@
 }
 
 .menu-section::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   transform: scaleX(0);
@@ -87,7 +87,7 @@
 }
 
 .menu-section-scrolled::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   transform: scaleX(0);

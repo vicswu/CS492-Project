@@ -10,7 +10,7 @@ import About from "../components/About";
 import Insights from "../components/Insights";
 import Models from "../components/Models";
 import Biases from "../components/Biases";
-import Methodology from "../components/Methodology";
+import Conclusion from "../components/Conclusion";
 
 export default function Home() {
   const [menu, setMenu] = useState(false);
@@ -36,7 +36,7 @@ export default function Home() {
           <Insights />
           <Models />
           <Biases />
-          <Methodology />
+          <Conclusion />
         </div>
         <footer className={styles["copyright-container"]}>
           <small className={styles["copyright-text"]}>

@@ -22,28 +22,28 @@ export default function Form({}) {
       TRANTIME: 0,
       sex: null,
       race: [],
-      maritalStatus: "",
+      maritalStatus: null,
       bornInUS: null,
       sameSexMarriage: null,
       mixedRaceMarriage: null,
-      insurance: "",
+      insurance: null,
       isInSchool: null,
       carpools: null,
       isGroupQuarters: null,
-      englishSkill: null,
-      education: "",
+      englishProficiency: null,
+      education: null,
       has2ndDegree: null,
-      workType: "",
+      workType: null,
       commute: null,
       schoolType: null,
       workLocation: null,
-      degree: "",
-      occupation: "",
+      degree: null,
+      occupation: null,
     },
   });
   const { handleSubmit, control, setValue, watch } = methods;
   const onSubmit = (data, e) => {
-    let newData = {...data};
+    let newData = { ...data };
     if (
       data.insurance === "hasEmployerHealthInsurance" ||
       data.insurance === "hasPurchasedPrivHealthInsurance" ||
@@ -75,8 +75,8 @@ export default function Form({}) {
       AGE: formattedAge,
       WKSWORK1: formattedWksWork1,
       UHRSWORK: formattedUhrsWork,
-      TRANTIME: formattedTranTime
-    }
+      TRANTIME: formattedTranTime,
+    };
 
     e.preventDefault();
     const postData = async () => {
@@ -108,7 +108,7 @@ export default function Form({}) {
       "isInSchool",
       "carpools",
       "isGroupQuarters",
-      "englishSkill",
+      "englishProficiency",
       "has2ndDegree",
       "commute",
       "schoolType",
@@ -139,21 +139,21 @@ export default function Form({}) {
           <FormInputNumber
             name="WKSWORK1"
             control={control}
-            label="Weeks of Work"
+            label="Weeks worked in the last year"
           />
         </div>
         <div className={styles["form-number"]}>
           <FormInputNumber
             name="UHRSWORK"
             control={control}
-            label="Hours of Work"
+            label="Average hours worked per week"
           />
         </div>
         <div className={styles["form-number"]}>
           <FormInputNumber
             name="TRANTIME"
             control={control}
-            label="Transit Time"
+            label="Minutes spent commuting to work"
           />
         </div>
         <div className={styles["form-radio"]}>
@@ -239,8 +239,8 @@ export default function Form({}) {
           <FormInputRadio
             control={control}
             setValue={setValue}
-            name={"englishSkill"}
-            label={"How would you describe your english skills?"}
+            name={"englishProficiency"}
+            label={"How would you describe your english proficiency?"}
           />
         </div>
         <div className={styles["form-dropdown"]}>
@@ -318,15 +318,15 @@ export default function Form({}) {
             variant={"contained"}
             disabled={
               !watchNumber ||
-              watchNumber.includes("") ||
+              watchNumber.includes(null) ||
               watchNumber.some((v) => v < 0 || v > 168) ||
               !watchRadio ||
               watchRadio.includes(null) ||
               watchCheckbox.length == 0 ||
               !watchDropdown ||
-              watchDropdown.includes("") ||
+              watchDropdown.includes(null) ||
               !watchAutocomplete ||
-              watchAutocomplete.includes("")
+              watchAutocomplete.includes(null)
             }
           >
             {" "}

@@ -139,7 +139,7 @@ export default function Navbar({ menu, setMenu }) {
             </ul>
             <ul>
               <a
-                href="#methodology"
+                href="#conclusion"
                 className={concatClassName(
                   styles["menu-section"],
                   scrolled && styles["menu-section-scrolled"]

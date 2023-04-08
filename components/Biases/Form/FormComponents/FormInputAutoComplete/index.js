@@ -2,8 +2,6 @@ import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import { Controller } from "react-hook-form";
 import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-import InputLabel from "@mui/material/InputLabel";
 
 export default function FormInputAutoComplete({ name, control, label }) {
   const options = {
@@ -66,6 +64,7 @@ export default function FormInputAutoComplete({ name, control, label }) {
       { label: "Puerto Rico", value: "worksIn_Puerto_Rico" },
     ],
     degree: [
+      { label: "No Degree", value: "" },
       { label: "Agriculture", value: "hasDegree_Agriculture" },
       {
         label: "Environment and Natural Resources",
@@ -1833,11 +1832,7 @@ export default function FormInputAutoComplete({ name, control, label }) {
             }}
             onChange={(_, value) => onChange(value.value)}
             renderInput={(params) => (
-              <TextField
-                {...params}
-                value={value}
-                label={label}
-              />
+              <TextField {...params} value={value} label={label} />
             )}
           />
         )}

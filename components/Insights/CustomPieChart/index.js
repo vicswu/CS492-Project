@@ -13,7 +13,7 @@ export default function CustomPieChart({ data }) {
           },
         },
       }}
-      colors={{ scheme: 'pastel1' }}
+      colors={{ scheme: "pastel1" }}
       margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
       innerRadius={0.35}
       padAngle={0.7}

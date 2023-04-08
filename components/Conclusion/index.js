@@ -8,19 +8,19 @@ import { conclusionText } from "../../lib/textContent";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Link from "@mui/material/Link";
 
-export default function Methodology({}) {
+export default function Conclusion({}) {
   return (
-    <section id="methodology" className={styles.methodology}>
-      <h1 className={styles["methodology-title"]}>Conclusion</h1>
-      <div className={styles["methodology-content"]}>
-        <div className={styles["methodology-left"]}>
+    <section id="conclusion" className={styles.conclusion}>
+      <h1 className={styles["conclusion-title"]}>Conclusion</h1>
+      <div className={styles["conclusion-content"]}>
+        <div className={styles["conclusion-left"]}>
           {conclusionText.map((text) => (
-            <p className={styles["methodology-text"]}>{text}</p>
+            <p className={styles["conclusion-text"]}>{text}</p>
           ))}
         </div>
-        <div className={styles["methodology-right"]}>
-          <div className={styles["methodology-github-container"]}>
-            <div className={styles["methodology-github-title"]}>
+        <div className={styles["conclusion-right"]}>
+          <div className={styles["conclusion-github-container"]}>
+            <div className={styles["conclusion-github-title"]}>
               AI Model Repository
             </div>
             <Link
@@ -41,8 +41,8 @@ export default function Methodology({}) {
               />
             </Link>
           </div>
-          <div className={styles["methodology-github-container"]}>
-            <div className={styles["methodology-github-title"]}>
+          <div className={styles["conclusion-github-container"]}>
+            <div className={styles["conclusion-github-title"]}>
               Website Repository
             </div>
             <Link

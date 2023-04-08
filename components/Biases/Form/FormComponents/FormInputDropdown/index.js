@@ -1,12 +1,16 @@
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
 
-import { useFormContext, Controller } from "react-hook-form";
+import { Controller } from "react-hook-form";
 
 const options = {
   insurance: [
+    {
+      label: "No Health Insurance",
+      value: "",
+    },
     {
       label: "Employer-Provided Health Insurance",
       value: "hasEmployerHealthInsurance",

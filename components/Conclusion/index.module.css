@@ -1,4 +1,4 @@
-.methodology {
+.conclusion {
   justify-content: inherit;
   width: 100vw;
   font-family: var(--font-mono);
@@ -8,18 +8,18 @@
   align-items: center;
 }
 
-.methodology-title {
+.conclusion-title {
   text-transform: uppercase;
   margin-bottom: 1rem;
   margin-left: 2rem;
 }
 
-.methodology-content {
+.conclusion-content {
   display: flex;
   margin-top: 3rem;
 }
 
-.methodology-left {
+.conclusion-left {
   position: relative;
   width: 75vw;
   background-color: #e7ebc5;
@@ -27,7 +27,7 @@
   display: block;
 }
 
-.methodology-text {
+.conclusion-text {
   margin-bottom: 1rem;
   line-height: 1.25;
   padding-right: 1.5rem;
@@ -36,24 +36,20 @@
   margin-top: 1rem;
 }
 
-.methodology-right {
+.conclusion-right {
   position: relative;
   width: 25vw;
   height: 50vh;
   align-items: center;
 }
 
-.methodology-github-container {
+.conclusion-github-container {
   text-align: center;
   margin-bottom: 3rem;
 }
 
-.methodology-github-title {
+.conclusion-github-title {
   margin-bottom: 1rem;
   font-size: large;
   font-weight: 600;
-}
-
-.methodology-github-icon:hover {
-    background-color: aqua;
 }

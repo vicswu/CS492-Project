@@ -84,27 +84,27 @@ export default function Biases({}) {
         <div className={styles["biases-description-paragraph"]}>
           Each of these points represents a data point. The red values
           correspond to higher values, while the blue values correspond to lower
-          values (with purple representing values in the middle). In this case,
-          red values correspond to more hours worked per week, while blue values
-          correspond to less hours worked per week. Dots to the left of the line
-          mean the number of hours worked had a positive impact on the salary
-          prediction, while dots to the right of the line mean the number of
-          hours worked had a negative impact on the salary prediction. In this
-          case, we can see that the dots to the right are mostly red, while the
-          dots to the left are mostly blue. This means the model predicted that
-          people who worked more hours made more money, which is a reasonable
-          thing to predict.
+          values (with purple representing values in the middle). For the field
+          UHRSWORK, red values correspond to more hours worked per week, while
+          blue values correspond to less hours worked per week. Dots to the left
+          of the line mean the number of hours worked had a positive impact on
+          the salary prediction, while dots to the right of the line mean the
+          number of hours worked had a negative impact on the salary prediction.
+          In this case, we can see that the dots to the right are mostly red,
+          while the dots to the left are mostly blue. This means the model
+          predicted that people who worked more hours made more money, which is
+          a reasonable thing to predict.
         </div>
         <div className={styles["biases-description-paragraph"]}>
           Note that boolean values (or values that are either true or false, as
           opposed to a numerical value) can also be graphed on a SHAP
-          visualization. In the above example, red values represent true
-          (meaning the respondent works in Illinois) while blue values represent
-          false (meaning the respondent does not work in Illinois). In this
-          case, we can see that the red dots are mostly to the right, while the
-          blue dots are on or slightly to the left of the line. This means the
-          model predicted that people working in Illinois made more money but
-          not working in Illinois didn’t have a major effect on predictions.
+          visualization. For the field worksInIllinois, red values represent
+          true (meaning the respondent works in Illinois) while blue values
+          represent false (meaning the respondent does not work in Illinois). In
+          this case, we can see that the red dots are mostly to the right, while
+          the blue dots are on or slightly to the left of the line. This means
+          the model predicted that people working in Illinois made more money
+          but not working in Illinois didn’t have a major effect on predictions.
         </div>
         <div className={styles["biases-description-paragraph"]}>
           Now, we can get into our examination of biases in our models. For each
