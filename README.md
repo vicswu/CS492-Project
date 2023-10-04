@@ -1,5 +1,6 @@
 # CS492-Project
-Next.js web application for CS492 W23
+Next.js web application for CS492 W23.
+You can visit the web app [here](https://cs492-project-woad.vercel.app/)
 
 ## Getting Started
 
